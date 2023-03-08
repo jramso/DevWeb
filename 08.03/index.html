@@ -11,5 +11,19 @@
     <h1>Javascript</h1>
     <!-- <button onclick="mudaTextoTitulo('Outro texto');mudaCorTitulo('red')"> Muda titulo </button> -->
     <button id="mudatitulo">Muda Titulo</button>
+
+    <script>
+        function mudatitulo(){
+            const textoOriginal = document.querySelector('h1').textContent
+            mudaTextoTitulo('outro texto')
+            mudaCorTitulo('red')
+
+            this.removeEventListener('click', mudatitulo)
+            this.addEventListener('click',()=>{
+                mudacorTitulo('Black')
+                mudaTextoTitulo(textoOriginal)
+            })
+        }
+    </script>
 </body>
 </html>
